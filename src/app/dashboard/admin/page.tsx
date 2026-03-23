@@ -63,7 +63,6 @@ export default async function AdminDashboardPage() {
           <div className="relative z-10 w-full">
             <p className="text-xs font-black uppercase tracking-widest mb-1 opacity-80">Revenus Cumulés (MTJ)</p>
             <p className="text-4xl font-black mt-1">{(revenueTotal > 0 ? revenueTotal : 0).toFixed(2)}$</p>
-            <p className="text-xs mt-2 font-medium opacity-70">Basé sur une marge variable de ~40%</p>
           </div>
         </div>
         <div className="glass-panel p-6 rounded-2xl border border-border shadow-sm flex items-center justify-between fade-in fade-in-delay-3">
