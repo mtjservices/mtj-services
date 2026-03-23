@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -39,11 +39,11 @@ model JobRequest {
   workerId       String?
   worker         User?    @relation("WorkerJobs", fields: [workerId], references: [id])
   serviceType    String
-  frequency      String   // "Ponctuel", "2 semaines", "Mensuel", "Saisonnier"
+  frequency      String
   description    String
   estimatedPrice Float?
-  status         String   @default("PENDING_ESTIMATE") // "PENDING_ESTIMATE", "ESTIMATED", "ACCEPTED", "COMPLETED"
-  paymentMethod  String?  // "ONLINE", "CASH"
+  status         String   @default("PENDING_ESTIMATE")
+  paymentMethod  String?
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
