@@ -40,7 +40,7 @@ export default function Home() {
       <section className="py-10 bg-primary-#076e28 text-white">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-            <div><p className="text-4xl font-black">14-18</p><p className="text-primary-200 text-sm mt-1">Ans, nos associés</p></div>
+            <div><p className="text-4xl font-black">14-18</p><p className="text-primary-200 text-sm mt-1">Ans</p></div>
             <div><p className="text-4xl font-black">7</p><p className="text-primary-200 text-sm mt-1">Types de services</p></div>
             <div><p className="text-4xl font-black">5</p><p className="text-primary-200 text-sm mt-1">Niveaux de récompenses</p></div>
           </div>
