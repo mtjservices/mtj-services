@@ -25,12 +25,10 @@ export default async function AdminDashboardPage() {
     include: { client: true, worker: true }
   });
 
-  // Basic stats
   const totalCompleted = allJobs.filter(j => j.status === 'COMPLETED').length;
   const allWorkers = await prisma.workerProfile.findMany();
   const payoutTotal = allWorkers.reduce((acc, w) => acc + w.totalEarnings, 0);
 
-  // Approximate MTJ Revenue: total value of completed jobs minus payouts
   const completedJobsList = await prisma.jobRequest.findMany({ where: { status: 'COMPLETED' } });
   const revenueTotal = completedJobsList.reduce((acc, j) => acc + (j.estimatedPrice || 0), 0) - payoutTotal;
 
@@ -61,13 +59,13 @@ export default async function AdminDashboardPage() {
         <div className="glass-panel p-6 rounded-2xl border border-border bg-gradient-to-br from-primary-50 to-white shadow-md flex items-center justify-between fade-in fade-in-delay-3 relative overflow-hidden text-primary-900 border-primary-200">
           <div className="absolute top-0 right-0 w-24 h-24 bg-primary-200 rounded-bl-full opacity-40"></div>
           <div className="relative z-10 w-full">
-            <p className="text-xs font-black uppercase tracking-widest mb-1 opacity-80">Revenus Cumulés (MTJ)</p>
+            <p className="text-xs font-black uppercase tracking-widest mb-1 opacity-80">Revenus cumulés (MTJ)</p>
             <p className="text-4xl font-black mt-1">{(revenueTotal > 0 ? revenueTotal : 0).toFixed(2)}$</p>
           </div>
         </div>
         <div className="glass-panel p-6 rounded-2xl border border-border shadow-sm flex items-center justify-between fade-in fade-in-delay-3">
           <div>
-            <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Contrats Complétés</p>
+            <p className="text-xs font-bold text-text-muted uppercase tracking-widest">Contrats complétés</p>
             <p className="text-4xl font-black text-green-600 mt-2">{completedJobsList.length}</p>
           </div>
           <div className="w-12 h-12 rounded-full bg-green-50 text-green-500 flex items-center justify-center text-xl">✅</div>
@@ -75,18 +73,21 @@ export default async function AdminDashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-start fade-in fade-in-delay-3">
-        {/* Colonne Gauche: Tâches administratives prioritaires */}
         <div className="space-y-16">
           
           {/* Estimations */}
           <section className="glass-panel p-8 rounded-3xl shadow-xl border border-border relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-max h-max bg-amber-50 text-amber-500 px-6 py-2 rounded-bl-3xl font-bold flex items-center gap-2 text-sm shadow-sm border-l border-b border-border">
-               <span>Urgent</span> <span className="relative flex h-3 w-3"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span><span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span></span>
-             </div>
-             
-             <h2 className="text-2xl font-extrabold mb-8 flex items-center gap-3">
+            <div className="absolute top-0 right-0 w-max h-max bg-amber-50 text-amber-500 px-6 py-2 rounded-bl-3xl font-bold flex items-center gap-2 text-sm shadow-sm border-l border-b border-border">
+              <span>Urgent</span>
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+              </span>
+            </div>
+            
+            <h2 className="text-2xl font-extrabold mb-8 flex items-center gap-3">
               <span className="w-10 h-10 rounded-xl bg-amber-100 ring-4 ring-amber-50 text-amber-600 flex items-center justify-center text-lg shadow-inner">💰</span>
-              Estimations Requises
+              Estimations requises
             </h2>
 
             {pendingJobs.length === 0 ? (
@@ -99,17 +100,17 @@ export default async function AdminDashboardPage() {
                   <div key={job.id} className="p-5 bg-white rounded-2xl border border-border shadow-sm flex flex-col gap-4 transition-transform hover:-translate-y-1">
                     <div>
                       <div className="flex justify-between items-start mb-2">
-                        <p className="font-extrabold text-xl">{job.serviceType}</p>
+                        <p className="font-extrabold text-xl text-black">{job.serviceType}</p>
                         <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 bg-gray-100 text-gray-700 rounded-lg">{job.frequency}</span>
                       </div>
-                      <p className="text-sm mt-1 bg-surface p-3 rounded-lg border border-border text-black">{job.description}</p>
-                      <p className="text-xs text-text-muted mt-3 font-semibold">Client: <span className="text-foreground">{job.client.email}</span></p>
+                      <p className="text-sm mt-1 bg-gray-50 p-3 rounded-lg border border-border text-black font-medium">{job.description}</p>
+                      <p className="text-xs mt-3 font-semibold text-black">Client : <span className="text-black">{job.client.email}</span></p>
                     </div>
 
                     <form action={estimateJobAction as any} className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-border mt-2">
                       <input type="hidden" name="jobId" value={job.id} />
                       <div className="relative flex-1">
-                        <span className="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-text-muted">$</span>
+                        <span className="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-gray-500">$</span>
                         <input 
                           type="number" 
                           step="0.01" 
@@ -117,10 +118,10 @@ export default async function AdminDashboardPage() {
                           name="estimatedPrice"
                           placeholder="0.00"
                           required
-                          className="w-full pl-8 pr-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-surface font-semibold text-lg"
+                          className="w-full pl-8 pr-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-white text-black font-semibold text-lg"
                         />
                       </div>
-                      <button type="submit" className="btn bg-amber-500 hover:bg-amber-600 text-white shadow-md font-bold px-6">Envoyer l'Offre</button>
+                      <button type="submit" className="btn bg-amber-500 hover:bg-amber-600 text-white shadow-md font-bold px-6">Envoyer l'offre</button>
                     </form>
                   </div>
                 ))}
@@ -132,7 +133,7 @@ export default async function AdminDashboardPage() {
           <section className="glass-panel p-8 rounded-3xl shadow-lg border border-border">
             <h2 className="text-2xl font-extrabold mb-8 flex items-center gap-3">
               <span className="w-10 h-10 rounded-xl bg-blue-100 ring-4 ring-blue-50 text-blue-600 flex items-center justify-center text-lg shadow-inner">🧑‍🔧</span>
-              Validation des Associés
+              Validation des associés
             </h2>
             
             {pendingWorkers.length === 0 ? (
@@ -148,8 +149,8 @@ export default async function AdminDashboardPage() {
                         {worker.user.email.charAt(0).toUpperCase()}
                       </div>
                       <div>
-                        <p className="font-extrabold text-foreground">{worker.user.email}</p>
-                        <p className="text-xs text-text-muted font-medium mt-1">Inscrit le {new Date(worker.joinedAt).toLocaleDateString()}</p>
+                        <p className="font-extrabold text-black">{worker.user.email}</p>
+                        <p className="text-xs text-gray-500 font-medium mt-1">Inscrit le {new Date(worker.joinedAt).toLocaleDateString()}</p>
                       </div>
                     </div>
                     <form action={approveWorkerAction as any} className="sm:ml-auto">
@@ -163,11 +164,11 @@ export default async function AdminDashboardPage() {
           </section>
         </div>
 
-        {/* Colonne Droite: Activité et Log */}
+        {/* Colonne Droite: Activité et journal */}
         <section className="glass-panel p-8 rounded-3xl shadow-lg border border-border h-full">
-           <h2 className="text-2xl font-extrabold mb-8 flex items-center gap-3">
+          <h2 className="text-2xl font-extrabold mb-8 flex items-center gap-3">
             <span className="w-10 h-10 rounded-xl bg-primary-100 ring-4 ring-primary-50 text-primary-600 flex items-center justify-center text-lg shadow-inner">📈</span>
-            Activité Récente
+            Activité récente
           </h2>
 
           <div className="space-y-4">
@@ -176,7 +177,6 @@ export default async function AdminDashboardPage() {
             ) : (
               allJobs.map(job => (
                 <div key={job.id} className="relative pl-6 pb-6 border-l-2 border-border last:border-0 last:pb-0">
-                  {/* Timeline dot */}
                   <div className={`absolute -left-2 top-0 w-4 h-4 rounded-full border-2 border-white shadow-sm ${
                     job.status === 'COMPLETED' ? 'bg-green-500' :
                     job.status === 'ACCEPTED' ? 'bg-indigo-500' :
@@ -185,12 +185,12 @@ export default async function AdminDashboardPage() {
                   
                   <div className="-mt-1.5 flex flex-col gap-1">
                     <div className="flex justify-between items-start">
-                      <p className="font-bold text-foreground leading-tight">{job.serviceType}</p>
-                      <span className="text-[10px] font-bold text-text-muted bg-surface px-2 py-0.5 rounded">{new Date(job.createdAt).toLocaleDateString()}</span>
+                      <p className="font-bold text-black leading-tight">{job.serviceType}</p>
+                      <span className="text-[10px] font-bold text-gray-500 bg-surface px-2 py-0.5 rounded">{new Date(job.createdAt).toLocaleDateString()}</span>
                     </div>
                     
-                    <p className="text-sm text-text-muted flex items-center gap-1.5 mt-1 border-b border-border/50 pb-2">
-                      <span className="font-medium">Client:</span> <span className="text-xs truncate">{job.client.email}</span>
+                    <p className="text-sm text-black flex items-center gap-1.5 mt-1 border-b border-border/50 pb-2">
+                      <span className="font-medium">Client :</span> <span className="text-xs truncate">{job.client.email}</span>
                     </p>
                     
                     <div className="flex flex-wrap gap-2 mt-2 items-center text-xs font-semibold">
@@ -199,12 +199,12 @@ export default async function AdminDashboardPage() {
                         job.status === 'ACCEPTED' ? 'bg-indigo-50 text-indigo-700' :
                         job.status === 'ESTIMATED' ? 'bg-blue-50 text-blue-700' : 'bg-amber-50 text-amber-700'
                       }`}>
-                        {job.status === 'PENDING_ESTIMATE' ? 'Attente d\'estimation' : 
+                        {job.status === 'PENDING_ESTIMATE' ? "Attente d'estimation" : 
                          job.status === 'ESTIMATED' ? 'Généré par Admin' : 
-                         job.status === 'ACCEPTED' ? 'Accepté par Client' : 'Totalement Complété'}
+                         job.status === 'ACCEPTED' ? 'Accepté par client' : 'Totalement complété'}
                       </span>
                       
-                      {job.estimatedPrice && <span className="bg-surface border border-border px-2 py-1 rounded-md text-foreground">{job.estimatedPrice}$</span>}
+                      {job.estimatedPrice && <span className="bg-surface border border-border px-2 py-1 rounded-md text-black">{job.estimatedPrice}$</span>}
                       {job.worker && <span className="bg-primary-50 text-primary-700 px-2 py-1 rounded-md border border-primary-100 flex items-center gap-1"><span>👷</span> {job.worker.email.split('@')[0]}</span>}
                       {job.status === 'COMPLETED' && job.paymentMethod && (
                         <span className="bg-surface px-2 py-1 rounded-md border border-border">💵 {job.paymentMethod}</span>
