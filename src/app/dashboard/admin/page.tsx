@@ -102,7 +102,7 @@ export default async function AdminDashboardPage() {
                         <p className="font-extrabold text-xl">{job.serviceType}</p>
                         <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-1 bg-gray-100 text-gray-700 rounded-lg">{job.frequency}</span>
                       </div>
-                      <p className="text-sm mt-1 bg-surface p-3 rounded-lg border border-border">{job.description}</p>
+                      <p className="text-sm mt-1 bg-surface p-3 rounded-lg border border-border text-black">{job.description}</p>
                       <p className="text-xs text-text-muted mt-3 font-semibold">Client: <span className="text-foreground">{job.client.email}</span></p>
                     </div>
 
