@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  passwordHash  String
+  role          String         @default("CLIENT") // "ADMIN", "CLIENT", "WORKER"
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  workerProfile WorkerProfile?
+  clientJobs    JobRequest[]   @relation("ClientJobs")
+  workerJobs    JobRequest[]   @relation("WorkerJobs")
+}
+
+model WorkerProfile {
+  id             String   @id @default(cuid())
+  userId         String   @unique
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status         String   @default("PENDING") // "PENDING", "APPROVED"
+  level          Int      @default(1) // 1 to 5
+  completedJobs  Int      @default(0)
+  totalEarnings  Float    @default(0)
+  averageRating  Float    @default(0)
+  joinedAt       DateTime @default(now())
+}
+
+model JobRequest {
+  id             String   @id @default(cuid())
+  clientId       String
+  client         User     @relation("ClientJobs", fields: [clientId], references: [id])
+  workerId       String?
+  worker         User?    @relation("WorkerJobs", fields: [workerId], references: [id])
+  serviceType    String
+  frequency      String   // "Ponctuel", "2 semaines", "Mensuel", "Saisonnier"
+  description    String
+  estimatedPrice Float?
+  status         String   @default("PENDING_ESTIMATE") // "PENDING_ESTIMATE", "ESTIMATED", "ACCEPTED", "COMPLETED"
+  paymentMethod  String?  // "ONLINE", "CASH"
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
