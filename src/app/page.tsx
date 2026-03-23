@@ -16,7 +16,7 @@ export default function Home() {
             <Link href="/auth/login" className="hover:text-primary-600 transition-colors">Connexion</Link>
           </nav>
           <div className="flex items-center gap-3">
-            <Link href="/auth/register/worker" className="btn btn-primary text-sm px-4 py-2">Devenir Associés</Link>
+            <Link href="/auth/register/worker" className="btn btn-primary text-sm px-4 py-2">Devenir Associé</Link>
             <Link href="/auth/register/client" className="btn btn-primary text-sm px-4 py-2">Demander un service</Link>
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function Home() {
               Votre terrain, <span className="text-primary-600">notre priorité.</span>
             </h1>
             <p className="text-xl md:text-2xl text-text-muted mb-10 max-w-2xl leading-relaxed">
-              Entretien de pelouse, déneigement et travaux manuels par des jeunes de 14 à 18 ans.
+              Entretien de pelouse, déneigement et travaux manuels faits par des jeunes de 14 à 18 ans.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/auth/register/client" className="btn btn-primary text-lg shadow-lg">Demander un service</Link>
@@ -39,9 +39,8 @@ export default function Home() {
       </section>
       <section className="py-10 bg-primary-#076e28 text-white">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div><p className="text-4xl font-black">14-18</p><p className="text-primary-200 text-sm mt-1">Ans nos Associés</p></div>
-            <div><p className="text-4xl font-black">40%</p><p className="text-primary-200 text-sm mt-1">Commission MTJ</p></div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+            <div><p className="text-4xl font-black">14-18</p><p className="text-primary-200 text-sm mt-1">Ans, nos associés</p></div>
             <div><p className="text-4xl font-black">7</p><p className="text-primary-200 text-sm mt-1">Types de services</p></div>
             <div><p className="text-4xl font-black">5</p><p className="text-primary-200 text-sm mt-1">Niveaux de récompenses</p></div>
           </div>
@@ -54,14 +53,14 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: "🌿", title: "Tonte de pelouse", desc: "Entretien regulier ou ponctuel." },
-              { icon: "✂️", title: "Taille de haies", desc: "Haies et arbustes impéccables." },
+              { icon: "🌿", title: "Tonte de pelouse", desc: "Entretien régulier ou ponctuel." },
+              { icon: "✂️", title: "Taille de haies", desc: "Haies et arbustes impeccables." },
               { icon: "🍂", title: "Ramassage de feuilles", desc: "Cour propre après chaque saison." },
-              { icon: "❄️", title: "Déneigement", desc: "Entrée et trottoir degagés." },
+              { icon: "❄️", title: "Déneigement", desc: "Entrée et trottoir dégagés." },
               { icon: "🌱", title: "Aménagement paysager", desc: "Plantation et mise en valeur." },
               { icon: "🔧", title: "Homme à tout faire", desc: "Réparations mineures." },
-              { icon: "🎨", title: "Peinture et retouches", desc: "Rafraichissez vos surfaces." },
-              { icon: "📋", title: "Sur mesure", desc: "Besoin spécifique? Contactez-nous." },
+              { icon: "🎨", title: "Peinture et retouches", desc: "Rafraîchissez vos surfaces." },
+              { icon: "📋", title: "Sur mesure", desc: "Besoin spécifique ? Contactez-nous." },
             ].map((s, i) => (
               <div key={i} className="glass-panel p-6 rounded-2xl border border-border hover:shadow-lg hover:-translate-y-1 transition-all">
                 <div className="text-4xl mb-4">{s.icon}</div>
@@ -82,7 +81,7 @@ export default function Home() {
               { icon: "📝", title: "Inscrivez-vous", desc: "Créez votre compte." },
               { icon: "📋", title: "Soumettez", desc: "Décrivez le service voulu." },
               { icon: "📞", title: "Estimation", desc: "On vous contacte." },
-              { icon: "👷", title: "Un Associé accepte", desc: "Un travailleur prend le contrat." },
+              { icon: "👷", title: "Un associé accepte", desc: "Un travailleur prend le contrat." },
               { icon: "✅", title: "Complété", desc: "Payez en ligne ou comptant." },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center p-4">
@@ -100,37 +99,37 @@ export default function Home() {
       <section className="py-24 bg-background">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-4">Deux facons de rejoindre MTJ</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4">Deux façons de rejoindre MTJ</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="glass-panel p-10 rounded-3xl border border-border shadow-lg">
               <div className="text-5xl mb-6">🏡</div>
-              <h3 className="text-2xl font-extrabold mb-3">Je suis un Client</h3>
+              <h3 className="text-2xl font-extrabold mb-3">Je suis un client</h3>
               <p className="text-text-muted mb-6">Services fiables et abordables.</p>
               <ul className="space-y-3 mb-8">
-                {["Estimation gratuite", "Travailleurs verifiés", "Abonnement ou unique", "Paiement flexible"].map((item, i) => (
+                {["Estimation gratuite", "Travailleurs vérifiés", "Abonnement ou unique", "Paiement flexible"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm">
                     <span className="w-5 h-5 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center text-xs">✓</span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <Link href="/auth/register/client" className="btn btn-primary w-full justify-center">Créer mon compte Client</Link>
+              <Link href="/auth/register/client" className="btn btn-primary w-full justify-center">Créer mon compte client</Link>
             </div>
             <div className="glass-panel p-10 rounded-3xl border-2 border-primary-300 bg-gradient-to-br from-primary-50 to-white shadow-lg relative overflow-hidden">
               <div className="absolute top-4 right-4 bg-primary-#076e28 text-white text-xs font-bold px-3 py-1 rounded-full">14-18 ans</div>
               <div className="text-5xl mb-6">💼</div>
-              <h3 className="text-2xl font-extrabold mb-3">Je suis un Associé</h3>
-              <p className="text-text-muted mb-6">Gagne de l'argent et batis ton expérience.</p>
+              <h3 className="text-2xl font-extrabold mb-3">Je suis un associé</h3>
+              <p className="text-text-muted mb-6">Gagne de l'argent et bâtis ton expérience.</p>
               <ul className="space-y-3 mb-8">
-                {["Choisis tes contrats", "Accumulé des gains à chaque job complété", "Système de niveaux", "Tableau de bord perso"].map((item, i) => (
+                {["Choisis tes contrats", "Accumule des gains à chaque job complété", "Système de niveaux", "Tableau de bord personnel"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm">
                     <span className="w-5 h-5 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center text-xs">✓</span>
                     {item}
                   </li>
                 ))}
               </ul>
-              <Link href="/auth/register/worker" className="btn btn-primary w-full justify-center">Postuler comme Associés</Link>
+              <Link href="/auth/register/worker" className="btn btn-primary w-full justify-center">Postuler comme associé</Link>
             </div>
           </div>
         </div>
@@ -138,11 +137,11 @@ export default function Home() {
       <section className="py-24 bg-primary-#076e28">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-4">Système de Niveaux 🏆</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4">Système de niveaux 🏆</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
-              { level: "N1", name: "Recrue MTJ", jobs: "0-4 jobs", bonus: "Accès au feed", color: "bg-gray-100 text-gray-700 border-gray-200" },
+              { level: "N1", name: "Recrue MTJ", jobs: "0-4 jobs", bonus: "Accès au fil", color: "bg-gray-100 text-gray-700 border-gray-200" },
               { level: "N2", name: "Associé Bronze", jobs: "5-14 jobs", bonus: "+5% gains", color: "bg-amber-50 text-amber-700 border-amber-200" },
               { level: "N3", name: "Associé Argent", jobs: "15-29 jobs", bonus: "+10% priorité", color: "bg-slate-100 text-slate-600 border-slate-300" },
               { level: "N4", name: "Associé Or", jobs: "30-49 jobs", bonus: "+15% badge", color: "bg-yellow-50 text-yellow-700 border-yellow-300" },
@@ -162,7 +161,7 @@ export default function Home() {
         <div className="container text-center max-w-3xl mx-auto">
           <div className="text-5xl mb-6">🌱</div>
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Plus qu'un service — une mission sociale</h2>
-          <p className="text-lg text-primary-100 mb-8">Les jeunes de 14 à 18 ans font face a un manque d'opportunités. MTJ Services est la pour changer ça.</p>
+          <p className="text-lg text-primary-100 mb-8">Les jeunes de 14 à 18 ans font face à un manque d'opportunités. MTJ Services est là pour changer ça.</p>
           <Link href="/auth/register/client" className="btn bg-black text-primary-700 text-lg font-bold shadow-xl">Rejoindre MTJ Services</Link>
         </div>
       </section>
@@ -172,7 +171,7 @@ export default function Home() {
           <p className="text-text-muted text-lg mb-8">Inscrivez-vous en moins de 2 minutes.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/auth/register/client" className="btn btn-primary text-lg">Demander un service</Link>
-            <Link href="/auth/register/worker" className="btn btn-primary text-lg">Devenir Associés</Link>
+            <Link href="/auth/register/worker" className="btn btn-primary text-lg">Devenir associé</Link>
           </div>
         </div>
       </section>
