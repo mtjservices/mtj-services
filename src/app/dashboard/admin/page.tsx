@@ -76,7 +76,7 @@ export default async function AdminDashboardPage() {
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-start fade-in fade-in-delay-3">
         {/* Colonne Gauche: Tâches administratives prioritaires */}
-        <div className="space-y-8">
+        <div className="space-y-16">
           
           {/* Estimations */}
           <section className="glass-panel p-8 rounded-3xl shadow-xl border border-border relative overflow-hidden">
