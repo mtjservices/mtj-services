@@ -12,6 +12,7 @@ export default function Home() {
           <nav className="hidden md:flex items-center gap-8 font-medium">
             <Link href="#services" className="hover:text-primary-600 transition-colors">Nos Services</Link>
             <Link href="#comment" className="hover:text-primary-600 transition-colors">Comment ça marche</Link>
+            <Link href="#contact" className="hover:text-primary-600 transition-colors">Contact</Link>
             <Link href="#mission" className="hover:text-primary-600 transition-colors">Notre Mission</Link>
             <Link href="/auth/login" className="hover:text-primary-600 transition-colors">Connexion</Link>
           </nav>
@@ -21,6 +22,8 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      {/* Hero */}
       <section className="pt-44 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-3xl fade-in" style={{paddingTop: "80px"}}>
@@ -33,10 +36,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/auth/register/client" className="btn btn-primary text-lg shadow-lg">Demander un service</Link>
               <Link href="/auth/register/worker" className="btn btn-primary text-lg shadow-lg">Rejoindre comme Associé</Link>
+              <a href="tel:5146868010" className="btn text-lg shadow-lg bg-green-600 hover:bg-green-700 text-white font-bold">📞 Appelez-nous maintenant</a>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Stats */}
       <section className="py-10 bg-primary-#076e28 text-white">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
@@ -46,6 +52,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Services */}
       <section id="services" className="py-24 bg-background">
         <div className="container">
           <div className="text-center mb-16">
@@ -71,6 +79,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Comment ça marche */}
       <section id="comment" className="py-24 bg-primary-#076e28">
         <div className="container">
           <div className="text-center mb-16">
@@ -96,6 +106,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Deux façons */}
       <section className="py-24 bg-background">
         <div className="container">
           <div className="text-center mb-16">
@@ -134,6 +146,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Système de niveaux */}
       <section className="py-24 bg-primary-#076e28">
         <div className="container">
           <div className="text-center mb-16">
@@ -157,6 +171,152 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Section Contact */}
+      <section id="contact" className="py-24 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-4">Contactez-nous</h2>
+            <p className="text-text-muted text-lg">Réponse garantie en moins de 24h ⚡</p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            {/* Infos de contact */}
+            <div className="space-y-8">
+              <div className="glass-panel p-8 rounded-3xl border border-border shadow-lg space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center text-xl">📍</div>
+                  <div>
+                    <p className="font-bold text-foreground">Localisation</p>
+                    <p className="text-text-muted">Laval, Québec</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl">📞</div>
+                  <div>
+                    <p className="font-bold text-foreground">Téléphone</p>
+                    <a href="tel:5146868010" className="text-primary-600 font-semibold hover:underline">514-686-8010</a>
+                  </div>
+                </div>
+
+                {/* Réseaux sociaux */}
+                <div className="pt-4 border-t border-border">
+                  <p className="font-bold text-foreground mb-4">Suivez-nous</p>
+                  <div className="flex gap-4">
+                    <a
+                      href="https://www.instagram.com/mtj_services?igsh=MTJvaGNkcTl2a2xrOA%3D%3D&utm_source=qr"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity shadow-md"
+                    >
+                      📸 Instagram
+                    </a>
+                    <a
+                      href="https://www.facebook.com/share/18HiBuVygv/?mibextid=wwXIfr"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity shadow-md"
+                    >
+                      👍 Facebook
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bouton appel */}
+              <a
+                href="tel:5146868010"
+                className="flex items-center justify-center gap-3 w-full py-5 bg-green-600 hover:bg-green-700 text-white font-extrabold text-xl rounded-2xl shadow-xl transition-all hover:-translate-y-1"
+              >
+                📞 Appelez-nous maintenant
+              </a>
+            </div>
+
+            {/* Formulaire */}
+            <div className="glass-panel p-8 rounded-3xl border border-border shadow-lg">
+              <h3 className="text-2xl font-extrabold mb-6">Envoyer une demande</h3>
+              <form className="space-y-4" action="https://formsubmit.co/ismaelaj@icloud.com" method="POST">
+                <input type="hidden" name="_subject" value="Nouvelle demande MTJ Services" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://mtj-services.vercel.app" />
+
+                <div>
+                  <label className="block text-sm font-semibold mb-1 text-foreground">Nom complet</label>
+                  <input
+                    type="text"
+                    name="nom"
+                    required
+                    placeholder="Jean Tremblay"
+                    className="w-full px-4 py-3 border border-border rounded-xl bg-surface text-foreground focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold mb-1 text-foreground">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="jean@email.com"
+                    className="w-full px-4 py-3 border border-border rounded-xl bg-surface text-foreground focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold mb-1 text-foreground">Téléphone</label>
+                  <input
+                    type="tel"
+                    name="telephone"
+                    required
+                    placeholder="514-000-0000"
+                    className="w-full px-4 py-3 border border-border rounded-xl bg-surface text-foreground focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold mb-1 text-foreground">Service demandé</label>
+                  <select
+                    name="service"
+                    required
+                    className="w-full px-4 py-3 border border-border rounded-xl bg-surface text-foreground focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  >
+                    <option value="">Choisissez un service...</option>
+                    <option>Tonte de pelouse</option>
+                    <option>Taille de haies</option>
+                    <option>Ramassage de feuilles</option>
+                    <option>Déneigement</option>
+                    <option>Aménagement paysager</option>
+                    <option>Homme à tout faire</option>
+                    <option>Peinture et retouches</option>
+                    <option>Sur mesure</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold mb-1 text-foreground">Message</label>
+                  <textarea
+                    name="message"
+                    required
+                    rows={4}
+                    placeholder="Décrivez votre besoin..."
+                    className="w-full px-4 py-3 border border-border rounded-xl bg-surface text-foreground focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-4 bg-primary-600 hover:bg-primary-700 text-white font-extrabold text-lg rounded-xl shadow-lg transition-all hover:-translate-y-0.5"
+                >
+                  Envoyer ma demande ✉️
+                </button>
+                <p className="text-center text-xs text-text-muted">⚡ Réponse garantie en moins de 24h</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission */}
       <section id="mission" className="py-24 bg-primary-700 text-white">
         <div className="container text-center max-w-3xl mx-auto">
           <div className="text-5xl mb-6">🌱</div>
@@ -165,6 +325,8 @@ export default function Home() {
           <Link href="/auth/register/client" className="btn bg-black text-primary-700 text-lg font-bold shadow-xl">Rejoindre MTJ Services</Link>
         </div>
       </section>
+
+      {/* CTA */}
       <section className="py-20 bg-background">
         <div className="container text-center max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Prêt à commencer ?</h2>
@@ -172,19 +334,28 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/auth/register/client" className="btn btn-primary text-lg">Demander un service</Link>
             <Link href="/auth/register/worker" className="btn btn-primary text-lg">Devenir associé</Link>
+            <a href="tel:5146868010" className="btn bg-green-600 hover:bg-green-700 text-white text-lg font-bold">📞 Nous appeler</a>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
       <footer className="py-10 border-t border-border bg-primary-#076e28">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="container flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary-#076e28 flex items-center justify-center text-white font-bold text-sm">M</div>
             <span className="font-bold">MTJ Services</span>
           </div>
           <div className="flex gap-6 text-sm text-text-muted">
             <Link href="#services" className="hover:text-foreground">Services</Link>
+            <Link href="#contact" className="hover:text-foreground">Contact</Link>
             <Link href="#mission" className="hover:text-foreground">Mission</Link>
             <Link href="/auth/login" className="hover:text-foreground">Connexion</Link>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href="https://www.instagram.com/mtj_services?igsh=MTJvaGNkcTl2a2xrOA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-foreground transition-colors">📸 Instagram</a>
+            <a href="https://www.facebook.com/share/18HiBuVygv/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-foreground transition-colors">👍 Facebook</a>
+            <a href="tel:5146868010" className="text-text-muted hover:text-foreground transition-colors">📞 514-686-8010</a>
           </div>
           <p className="text-sm text-text-muted">&copy; {new Date().getFullYear()} MTJ Services.</p>
         </div>
