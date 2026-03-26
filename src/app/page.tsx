@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" style={{ padding: '4rem 1rem', backgroundColor: 'hsl(140, 30%, 88%)' }}>
+      <section id="services" style={{ padding: '4rem 1rem', backgroundColor: 'hsl(145, 45%, 32%)' }}>
         <div className="container mx-auto">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'hsl(150, 40%, 15%)', textAlign: 'center', marginBottom: '2.5rem' }}>Nos Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -130,7 +130,7 @@ export default function Home() {
             ].map((s, i) => (
               <div key={s.title} className="flex flex-col items-center text-center gap-2">
                 <div style={{
-                  backgroundColor: 'hsl(140, 30%, 88%)', width: '4rem', height: '4rem',
+                  backgroundColor: 'hsl(145, 45%, 32%)', width: '4rem', height: '4rem',
                   borderRadius: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: '1.5rem', position: 'relative'
                 }}>
@@ -152,7 +152,7 @@ export default function Home() {
       </section>
 
       {/* DEUX FAÇONS */}
-      <section style={{ padding: '4rem 1rem', backgroundColor: 'hsl(140, 30%, 88%)' }}>
+      <section style={{ padding: '4rem 1rem', backgroundColor: 'hsl(145, 45%, 32%)' }}>
         <div className="container mx-auto">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'hsl(150, 40%, 15%)', textAlign: 'center', marginBottom: '2.5rem' }}>Deux façons de rejoindre MTJ</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -206,7 +206,7 @@ export default function Home() {
               { tag: "N5", name: "Élite MTJ 👑", jobs: "50+ jobs", perk: "+20% exclusifs" },
             ].map((l) => (
               <div key={l.tag} style={{
-                backgroundColor: 'hsl(140, 30%, 88%)', color: 'hsl(150, 40%, 15%)',
+                backgroundColor: 'hsl(145, 45%, 32%)', color: 'hsl(150, 40%, 15%)',
                 borderRadius: '1rem', padding: '1rem', textAlign: 'center',
                 display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem'
               }}>
@@ -229,7 +229,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" style={{ padding: '4rem 1rem', backgroundColor: 'hsl(140, 30%, 88%)' }}>
+      <section id="contact" style={{ padding: '4rem 1rem', backgroundColor: 'hsl(145, 45%, 32%)' }}>
         <div className="container mx-auto max-w-2xl text-center">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'hsl(150, 40%, 15%)', textAlign: 'center', marginBottom: '1rem' }}>Contactez-nous</h2>
           <p style={{ color: 'hsl(150, 40%, 25%)', marginBottom: '2rem' }}>Réponse garantie en moins de 24h ⚡</p>
