@@ -91,7 +91,7 @@ export default function Home() {
       {/* SERVICES */}
       <section id="services" style={{ padding: '4rem 1rem', backgroundColor: 'hsl(145, 45%, 32%)' }}>
         <div className="container mx-auto">
-          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'hsl(150, 40%, 15%)', textAlign: 'center', marginBottom: '2.5rem' }}>Nos Services</h2>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'white', textAlign: 'center', marginBottom: '2.5rem' }}>Nos Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { icon: "🌿", title: "Tonte de pelouse", desc: "Entretien régulier ou ponctuel." },
@@ -104,7 +104,7 @@ export default function Home() {
               { icon: "📋", title: "Sur mesure", desc: "Besoin spécifique ? Contactez-nous." },
             ].map((s) => (
               <div key={s.title} style={{
-                backgroundColor: 'white', color: 'hsl(150, 40%, 15%)',
+                backgroundColor: 'hsl(145, 35%, 28%)', color: 'white',
                 borderRadius: '1rem', padding: '1.25rem'
               }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{s.icon}</div>
@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* COMMENT ÇA MARCHE */}
-      <section id="how" style={{ padding: '4rem 1rem' }}>
+      <section id="how" style={{ padding: '4rem 1rem', backgroundColor: 'hsl(145, 45%, 32%)' }}>
         <div className="container mx-auto">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'white', textAlign: 'center', marginBottom: '2.5rem' }}>Comment ça marche</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -130,7 +130,7 @@ export default function Home() {
             ].map((s, i) => (
               <div key={s.title} className="flex flex-col items-center text-center gap-2">
                 <div style={{
-                  backgroundColor: 'hsl(145, 45%, 32%)', width: '4rem', height: '4rem',
+                  backgroundColor: 'hsl(145, 35%, 28%)', width: '4rem', height: '4rem',
                   borderRadius: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: '1.5rem', position: 'relative'
                 }}>
@@ -154,9 +154,9 @@ export default function Home() {
       {/* DEUX FAÇONS */}
       <section style={{ padding: '4rem 1rem', backgroundColor: 'hsl(145, 45%, 32%)' }}>
         <div className="container mx-auto">
-          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'hsl(150, 40%, 15%)', textAlign: 'center', marginBottom: '2.5rem' }}>Deux façons de rejoindre MTJ</h2>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'white', textAlign: 'center', marginBottom: '2.5rem' }}>Deux façons de rejoindre MTJ</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div style={{ backgroundColor: 'white', color: 'hsl(150, 40%, 15%)', borderRadius: '1rem', padding: '1.5rem' }}>
+            <div style={{ backgroundColor: 'hsl(145, 35%, 28%)', color: 'white', borderRadius: '1rem', padding: '1.5rem' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🏡</div>
               <h3 style={{ fontWeight: 700, fontSize: '1.25rem', marginBottom: '0.5rem' }}>Je suis un client</h3>
               <p style={{ fontSize: '0.875rem', opacity: 0.8, marginBottom: '1rem' }}>Services fiables et abordables.</p>
@@ -170,7 +170,7 @@ export default function Home() {
                 fontWeight: 600, padding: '0.75rem 1.5rem', borderRadius: '0.75rem', textDecoration: 'none', display: 'inline-block', fontSize: '0.875rem'
               }}>Créer mon compte client</Link>
             </div>
-            <div style={{ backgroundColor: 'white', color: 'hsl(150, 40%, 15%)', borderRadius: '1rem', padding: '1.5rem', position: 'relative' }}>
+            <div style={{ backgroundColor: 'hsl(145, 35%, 28%)', color: 'white', borderRadius: '1rem', padding: '1.5rem', position: 'relative' }}>
               <span style={{
                 position: 'absolute', top: '1rem', right: '1rem',
                 backgroundColor: 'hsl(65, 85%, 55%)', color: 'hsl(150, 40%, 15%)',
@@ -194,7 +194,7 @@ export default function Home() {
       </section>
 
       {/* NIVEAUX */}
-      <section style={{ padding: '4rem 1rem' }}>
+      <section style={{ padding: '4rem 1rem', backgroundColor: 'hsl(145, 45%, 32%)' }}>
         <div className="container mx-auto">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'white', textAlign: 'center', marginBottom: '2.5rem' }}>Système de niveaux 🏆</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -206,7 +206,7 @@ export default function Home() {
               { tag: "N5", name: "Élite MTJ 👑", jobs: "50+ jobs", perk: "+20% exclusifs" },
             ].map((l) => (
               <div key={l.tag} style={{
-                backgroundColor: 'hsl(145, 45%, 32%)', color: 'hsl(150, 40%, 15%)',
+                backgroundColor: 'hsl(140, 30%, 88%)', color: 'hsl(150, 40%, 15%)',
                 borderRadius: '1rem', padding: '1rem', textAlign: 'center',
                 display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem'
               }}>
@@ -231,39 +231,41 @@ export default function Home() {
       {/* CONTACT */}
       <section id="contact" style={{ padding: '4rem 1rem', backgroundColor: 'hsl(145, 45%, 32%)' }}>
         <div className="container mx-auto max-w-2xl text-center">
-          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'hsl(150, 40%, 15%)', textAlign: 'center', marginBottom: '1rem' }}>Contactez-nous</h2>
-          <p style={{ color: 'hsl(150, 40%, 25%)', marginBottom: '2rem' }}>Réponse garantie en moins de 24h ⚡</p>
+          <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'white', textAlign: 'center', marginBottom: '1rem' }}>Contactez-nous</h2>
+          <p style={{ color: 'hsl(140, 20%, 75%)', marginBottom: '2rem' }}>Réponse garantie en moins de 24h ⚡</p>
           <div className="grid sm:grid-cols-2 gap-4 mb-8">
-            <div style={{ backgroundColor: 'white', color: 'hsl(150, 40%, 15%)', borderRadius: '1rem', padding: '1.25rem', textAlign: 'center' }}>
+            <div style={{ backgroundColor: 'hsl(145, 35%, 28%)', color: 'white', borderRadius: '1rem', padding: '1.25rem', textAlign: 'center' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>📍</div>
               <h3 style={{ fontWeight: 700, fontSize: '0.875rem' }}>Localisation</h3>
               <p style={{ fontSize: '0.875rem', opacity: 0.8 }}>Laval, Québec</p>
             </div>
-            <div style={{ backgroundColor: 'white', color: 'hsl(150, 40%, 15%)', borderRadius: '1rem', padding: '1.25rem', textAlign: 'center' }}>
+            <div style={{ backgroundColor: 'hsl(145, 35%, 28%)', color: 'white', borderRadius: '1rem', padding: '1.25rem', textAlign: 'center' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>📞</div>
               <h3 style={{ fontWeight: 700, fontSize: '0.875rem' }}>Téléphone</h3>
-              <a href="tel:5146868010" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'hsl(150, 40%, 15%)', textDecoration: 'none' }}>514-686-8010</a>
+              <a href="tel:5146868010" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'hsl(65, 85%, 55%)', textDecoration: 'none' }}>514-686-8010</a>
             </div>
           </div>
           <div className="flex justify-center gap-4 mb-6">
             <a href="https://www.instagram.com/mtj_services?igsh=MTJvaGNkcTl2a2xrOA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" style={{
               backgroundColor: 'hsl(145, 35%, 28%)', color: 'white',
-              fontWeight: 600, padding: '0.5rem 1rem', borderRadius: '0.75rem', textDecoration: 'none', fontSize: '0.875rem'
+              fontWeight: 600, padding: '0.5rem 1rem', borderRadius: '0.75rem', textDecoration: 'none', fontSize: '0.875rem',
+              border: '1px solid rgba(255,255,255,0.3)'
             }}>📸 Instagram</a>
             <a href="https://www.facebook.com/share/18HiBuVygv/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" style={{
               backgroundColor: 'hsl(145, 35%, 28%)', color: 'white',
-              fontWeight: 600, padding: '0.5rem 1rem', borderRadius: '0.75rem', textDecoration: 'none', fontSize: '0.875rem'
+              fontWeight: 600, padding: '0.5rem 1rem', borderRadius: '0.75rem', textDecoration: 'none', fontSize: '0.875rem',
+              border: '1px solid rgba(255,255,255,0.3)'
             }}>👍 Facebook</a>
           </div>
           <a href="tel:5146868010" style={{
-            border: '2px solid hsl(150, 40%, 15%)', color: 'hsl(150, 40%, 15%)',
+            border: '2px solid white', color: 'white',
             fontWeight: 600, padding: '0.75rem 1.5rem', borderRadius: '0.75rem', textDecoration: 'none', display: 'inline-block'
           }}>📞 Appelez-nous maintenant</a>
         </div>
       </section>
 
       {/* MISSION */}
-      <section id="mission" style={{ padding: '4rem 1rem' }}>
+      <section id="mission" style={{ padding: '4rem 1rem', backgroundColor: 'hsl(145, 45%, 32%)' }}>
         <div className="container mx-auto max-w-3xl text-center">
           <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🌱</div>
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'white', textAlign: 'center', marginBottom: '1rem' }}>Plus qu'un service — une mission sociale</h2>
