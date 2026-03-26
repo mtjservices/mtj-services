@@ -16,7 +16,7 @@ export default function Home() {
         borderBottom: '1px solid hsl(145, 25%, 45%)'
       }}>
         <div className="container mx-auto flex items-center justify-between py-4 px-4">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2" style={{ textDecoration: 'none' }}>
             <span style={{
               backgroundColor: 'hsl(65, 85%, 55%)', color: 'hsl(150, 40%, 15%)',
               fontWeight: 900, fontSize: '1.125rem', width: '2.25rem', height: '2.25rem',
@@ -31,9 +31,7 @@ export default function Home() {
               { label: "Notre Mission", href: "#mission" },
               { label: "Contact", href: "#contact" },
             ].map((l) => (
-              <a key={l.href} href={l.href} style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.875rem', fontWeight: 500, textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseOver={e => (e.currentTarget.style.color = 'white')}
-                onMouseOut={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.85)')}>
+              <a key={l.href} href={l.href} style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.875rem', fontWeight: 500, textDecoration: 'none' }}>
                 {l.label}
               </a>
             ))}
@@ -107,10 +105,8 @@ export default function Home() {
             ].map((s) => (
               <div key={s.title} style={{
                 backgroundColor: 'white', color: 'hsl(150, 40%, 15%)',
-                borderRadius: '1rem', padding: '1.25rem', transition: 'transform 0.2s'
-              }}
-                onMouseOver={e => (e.currentTarget.style.transform = 'scale(1.05)')}
-                onMouseOut={e => (e.currentTarget.style.transform = 'scale(1)')}>
+                borderRadius: '1rem', padding: '1.25rem'
+              }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{s.icon}</div>
                 <h3 style={{ fontWeight: 700, fontSize: '1.125rem', marginBottom: '0.25rem' }}>{s.title}</h3>
                 <p style={{ fontSize: '0.875rem', opacity: 0.8 }}>{s.desc}</p>
@@ -160,7 +156,7 @@ export default function Home() {
         <div className="container mx-auto">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'hsl(150, 40%, 15%)', textAlign: 'center', marginBottom: '2.5rem' }}>Deux façons de rejoindre MTJ</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div style={{ backgroundColor: 'white', color: 'hsl(150, 40%, 15%)', borderRadius: '1rem', padding: '1.25rem' }}>
+            <div style={{ backgroundColor: 'white', color: 'hsl(150, 40%, 15%)', borderRadius: '1rem', padding: '1.5rem' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🏡</div>
               <h3 style={{ fontWeight: 700, fontSize: '1.25rem', marginBottom: '0.5rem' }}>Je suis un client</h3>
               <p style={{ fontSize: '0.875rem', opacity: 0.8, marginBottom: '1rem' }}>Services fiables et abordables.</p>
@@ -174,7 +170,7 @@ export default function Home() {
                 fontWeight: 600, padding: '0.75rem 1.5rem', borderRadius: '0.75rem', textDecoration: 'none', display: 'inline-block', fontSize: '0.875rem'
               }}>Créer mon compte client</Link>
             </div>
-            <div style={{ backgroundColor: 'white', color: 'hsl(150, 40%, 15%)', borderRadius: '1rem', padding: '1.25rem', position: 'relative' }}>
+            <div style={{ backgroundColor: 'white', color: 'hsl(150, 40%, 15%)', borderRadius: '1rem', padding: '1.5rem', position: 'relative' }}>
               <span style={{
                 position: 'absolute', top: '1rem', right: '1rem',
                 backgroundColor: 'hsl(65, 85%, 55%)', color: 'hsl(150, 40%, 15%)',
@@ -246,7 +242,7 @@ export default function Home() {
             <div style={{ backgroundColor: 'white', color: 'hsl(150, 40%, 15%)', borderRadius: '1rem', padding: '1.25rem', textAlign: 'center' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>📞</div>
               <h3 style={{ fontWeight: 700, fontSize: '0.875rem' }}>Téléphone</h3>
-              <a href="tel:5146868010" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'hsl(150, 40%, 15%)' }}>514-686-8010</a>
+              <a href="tel:5146868010" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'hsl(150, 40%, 15%)', textDecoration: 'none' }}>514-686-8010</a>
             </div>
           </div>
           <div className="flex justify-center gap-4 mb-6">
@@ -286,7 +282,7 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: 800, color: 'white', textAlign: 'center', marginBottom: '1rem' }}>Prêt à commencer ?</h2>
           <p style={{ color: 'hsl(140, 20%, 85%)', marginBottom: '2rem' }}>Inscrivez-vous en moins de 2 minutes.</p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
             <Link href="/auth/register/client" style={{
               backgroundColor: 'hsl(65, 85%, 55%)', color: 'hsl(150, 40%, 15%)',
               fontWeight: 600, padding: '0.75rem 1.5rem', borderRadius: '0.75rem', textDecoration: 'none', display: 'inline-block'
@@ -300,7 +296,7 @@ export default function Home() {
               fontWeight: 600, padding: '0.75rem 1.5rem', borderRadius: '0.75rem', textDecoration: 'none', display: 'inline-block'
             }}>📞 Nous appeler</a>
           </div>
-          <div className="flex justify-center gap-6 mt-8" style={{ color: 'hsl(140, 20%, 85%)', fontSize: '0.875rem' }}>
+          <div className="flex flex-wrap justify-center gap-6" style={{ color: 'hsl(140, 20%, 85%)', fontSize: '0.875rem', marginBottom: '1.5rem' }}>
             <a href="#services" style={{ color: 'hsl(140, 20%, 85%)', textDecoration: 'none' }}>Services</a>
             <a href="#contact" style={{ color: 'hsl(140, 20%, 85%)', textDecoration: 'none' }}>Contact</a>
             <a href="#mission" style={{ color: 'hsl(140, 20%, 85%)', textDecoration: 'none' }}>Mission</a>
@@ -308,7 +304,7 @@ export default function Home() {
             <a href="https://www.instagram.com/mtj_services?igsh=MTJvaGNkcTl2a2xrOA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(140, 20%, 85%)', textDecoration: 'none' }}>📸 Instagram</a>
             <a href="https://www.facebook.com/share/18HiBuVygv/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(140, 20%, 85%)', textDecoration: 'none' }}>👍 Facebook</a>
           </div>
-          <p style={{ color: 'hsl(140, 20%, 85%)', fontSize: '0.875rem', marginTop: '1.5rem' }}>© {new Date().getFullYear()} MTJ Services.</p>
+          <p style={{ color: 'hsl(140, 20%, 85%)', fontSize: '0.875rem' }}>© {new Date().getFullYear()} MTJ Services.</p>
         </div>
       </section>
 
