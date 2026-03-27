@@ -3,43 +3,49 @@ import React from 'react';
 export default function RegisterClientPage() {
   return (
     <div className="min-h-screen bg-[#2d5a27] flex items-center justify-center p-6 md:p-10">
-      {/* La carte blanche avec plus d'arrondi et d'ombre */}
-      <div className="bg-white w-full max-w-[550px] rounded-3xl shadow-2xl p-8 md:p-12 my-10">
+      
+      {/* La carte blanche */}
+      <div className="bg-white w-full max-w-[550px] rounded-3xl shadow-2xl py-12 my-10 overflow-hidden">
         
-        <form className="space-y-8">
+        {/* Titre (Optionnel, pour faire comme Lovable) */}
+        <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">Demander un service</h2>
+        
+        {/* On ajoute px-10 ici pour que RIEN ne dépasse sur les côtés */}
+        <form className="space-y-8 px-10 text-left">
+          
           {/* Nom Complet */}
-          <div className="flex flex-col gap-3">
-            <label className="text-sm font-bold text-gray-800 ml-1">Nom complet</label>
+          <div className="flex flex-col gap-2">
+            <label className="text-sm font-bold text-gray-700">Nom complet</label>
             <input 
               type="text" 
               placeholder="Votre nom" 
-              className="w-full px-5 py-4 bg-[#f9fafb] border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 outline-none transition-all placeholder:text-gray-400"
+              className="w-full px-5 py-4 bg-[#f9fafb] border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 outline-none transition-all"
             />
           </div>
 
           {/* Email */}
-          <div className="flex flex-col gap-3">
-            <label className="text-sm font-bold text-gray-800 ml-1">Email</label>
+          <div className="flex flex-col gap-2">
+            <label className="text-sm font-bold text-gray-700">Email</label>
             <input 
               type="email" 
               placeholder="votre@email.com" 
-              className="w-full px-5 py-4 bg-[#f9fafb] border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 outline-none transition-all placeholder:text-gray-400"
+              className="w-full px-5 py-4 bg-[#f9fafb] border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 outline-none transition-all"
             />
           </div>
 
           {/* Téléphone */}
-          <div className="flex flex-col gap-3">
-            <label className="text-sm font-bold text-gray-800 ml-1">Téléphone</label>
+          <div className="flex flex-col gap-2">
+            <label className="text-sm font-bold text-gray-700">Téléphone</label>
             <input 
               type="tel" 
               placeholder="514-000-0000" 
-              className="w-full px-5 py-4 bg-[#f9fafb] border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 outline-none transition-all placeholder:text-gray-400"
+              className="w-full px-5 py-4 bg-[#f9fafb] border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 outline-none transition-all"
             />
           </div>
 
           {/* Service demandé */}
-          <div className="flex flex-col gap-3">
-            <label className="text-sm font-bold text-gray-800 ml-1">Service demandé</label>
+          <div className="flex flex-col gap-2">
+            <label className="text-sm font-bold text-gray-700">Service demandé</label>
             <div className="relative">
               <select className="w-full px-5 py-4 bg-[#f9fafb] border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 outline-none text-gray-500 appearance-none cursor-pointer">
                 <option>Choisissez un service...</option>
@@ -59,23 +65,23 @@ export default function RegisterClientPage() {
           </div>
 
           {/* Message */}
-          <div className="flex flex-col gap-3">
-            <label className="text-sm font-bold text-gray-800 ml-1">Message</label>
+          <div className="flex flex-col gap-2">
+            <label className="text-sm font-bold text-gray-700">Message</label>
             <textarea 
               placeholder="Décrivez votre besoin..." 
               rows={4}
-              className="w-full px-5 py-4 bg-[#f9fafb] border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 outline-none resize-none transition-all placeholder:text-gray-400"
+              className="w-full px-5 py-4 bg-[#f9fafb] border border-gray-200 rounded-xl focus:ring-2 focus:ring-yellow-400 outline-none resize-none transition-all"
             ></textarea>
           </div>
 
           {/* Bouton Envoyer */}
-          <div className="pt-6">
+          <div className="pt-4">
             <button 
               type="submit" 
-              className="w-full bg-[#fde047] hover:bg-yellow-400 text-black font-extrabold py-5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3 text-lg"
+              className="w-full bg-[#fde047] hover:bg-yellow-400 text-black font-extrabold py-5 rounded-full shadow-md transition-all flex items-center justify-center gap-3"
             >
               Envoyer ma demande
-              <span className="bg-white/60 px-2 py-0.5 rounded text-sm">✉️</span>
+              <span className="bg-white/40 px-2 py-0.5 rounded text-xs">✉️</span>
             </button>
           </div>
         </form>
