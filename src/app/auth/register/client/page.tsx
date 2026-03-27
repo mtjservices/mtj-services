@@ -1,69 +1,85 @@
-'use client';
-import { useActionState } from 'react';
-import { registerClientAction } from '@/app/actions/auth';
-import Link from 'next/link';
-import { useFormStatus } from 'react-dom';
+import React from 'react';
 
-const initialState = { error: '' };
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
+export default function RequestServicePage() {
   return (
-    <button type="submit" className="btn btn-primary w-full mt-4" disabled={pending}>
-      {pending ? 'Création en cours...' : 'Créer mon compte Client'}
-    </button>
-  );
-}
-
-export default function RegisterClientPage() {
-  const [state, formAction] = useActionState(registerClientAction, initialState);
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-surface p-4">
-      <div className="glass-panel p-8 w-full max-w-md shadow-xl rounded-xl border-t-4 border-t-primary-500">
-        <div className="text-center mb-6">
-           <Link href="/" className="inline-flex items-center justify-center w-12 h-12 bg-primary-600 text-white font-bold text-2xl rounded-lg mb-4">
-              M
-           </Link>
-           <h1 className="text-2xl font-bold">Inscription Client</h1>
-           <p className="text-text-muted mt-2">Déléguez vos tâches d'entretien en toute simplicité</p>
-        </div>
+    // Le conteneur vert principal (on utilise la couleur exacte de ton site)
+    <div className="min-h-screen bg-[#2d5a27] flex flex-col items-center justify-center p-4">
+      
+      {/* La carte blanche du formulaire */}
+      <div className="bg-white w-full max-w-[500px] rounded-xl shadow-xl p-10">
         
-        {state?.error && (
-          <div className="bg-red-50 text-red-600 border border-red-200 p-3 rounded-md mb-4 text-sm font-medium">
-            {state.error}
+        <form className="space-y-6">
+          {/* Nom Complet */}
+          <div className="space-y-2">
+            <label className="block text-sm font-bold text-gray-800">Nom complet</label>
+            <input 
+              type="text" 
+              placeholder="Votre nom" 
+              className="w-full px-4 py-3 bg-[#f8f9fa] border border-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-600"
+            />
           </div>
-        )}
 
-        <form action={formAction} className="space-y-4">
-          <div>
-            <label className="block text-sm font-semibold mb-1 text-foreground">Adresse courriel</label>
+          {/* Email */}
+          <div className="space-y-2">
+            <label className="block text-sm font-bold text-gray-800">Email</label>
             <input 
-              name="email" 
               type="email" 
-              required 
-              placeholder="votre@email.com"
-              className="w-full p-2.5 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 bg-background transition-shadow"
+              placeholder="votre@email.com" 
+              className="w-full px-4 py-3 bg-[#f8f9fa] border border-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-600"
             />
           </div>
-          <div>
-            <label className="block text-sm font-semibold mb-1 text-foreground">Mot de passe</label>
+
+          {/* Téléphone */}
+          <div className="space-y-2">
+            <label className="block text-sm font-bold text-gray-800">Téléphone</label>
             <input 
-              name="password" 
-              type="password" 
-              required 
-              minLength={6}
-              placeholder="Min. 6 caractères"
-              className="w-full p-2.5 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 bg-background transition-shadow"
+              type="tel" 
+              placeholder="514-000-0000" 
+              className="w-full px-4 py-3 bg-[#f8f9fa] border border-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-600"
             />
           </div>
-          <SubmitButton />
+
+          {/* Service demandé */}
+          <div className="space-y-2">
+            <label className="block text-sm font-bold text-gray-800">Service demandé</label>
+            <div className="relative">
+              <select className="w-full px-4 py-3 bg-[#f8f9fa] border border-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-500 appearance-none">
+                <option>Choisissez un service...</option>
+                <option>Entretien de pelouse</option>
+                <option>Déneigement</option>
+                <option>Travaux manuels</option>
+                <option>Lavage de vitres</option>
+                <option>Nettoyage de gouttières</option>
+                <option>Taille de haie</option>
+                <option>Ramassage de feuilles</option>
+              </select>
+              {/* Petite flèche personnalisée */}
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Message */}
+          <div className="space-y-2">
+            <label className="block text-sm font-bold text-gray-800">Message</label>
+            <textarea 
+              placeholder="Décrivez votre besoin..." 
+              rows={4}
+              className="w-full px-4 py-3 bg-[#f8f9fa] border border-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-600 resize-none"
+            ></textarea>
+          </div>
+
+          {/* Bouton Envoyer Jaune */}
+          <button 
+            type="submit" 
+            className="w-full bg-[#eab308] hover:bg-yellow-500 text-black font-bold py-4 rounded-lg transition-all shadow-md flex items-center justify-center gap-2 mt-4"
+          >
+            Envoyer ma demande
+            <span className="bg-white rounded-sm px-1 text-[10px]">✉️</span>
+          </button>
         </form>
 
-        <div className="mt-8 pt-6 border-t border-border text-center text-sm text-text-muted">
-          <p className="mb-3">Vous avez déjà un compte ?</p>
-          <Link href="/auth/login" className="text-primary-600 hover:text-primary-700 font-medium">Se connecter</Link>
-        </div>
       </div>
     </div>
   );
