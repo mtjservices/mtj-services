@@ -6,20 +6,27 @@ export async function POST(req: NextRequest) {
     const { nom, email, telephone, service, message } = await req.json();
 
     if (!nom || !email || !telephone || !service) {
-      return NextResponse.json({ message: 'Veuillez remplir tous les champs obligatoires.' }, { status: 400 });
+      return NextResponse.json(
+        { message: 'Veuillez remplir tous les champs obligatoires.' },
+        { status: 400 }
+      );
     }
 
     await prisma.jobRequest.create({
       data: {
         serviceType: service,
-        description: message || '',
+        description: `Nom: ${nom} | Téléphone: ${telephone} | ${message || ''}`,
         frequency: 'PONCTUEL',
         status: 'PENDING_ESTIMATE',
         paymentMethod: 'PENDING',
         client: {
           connectOrCreate: {
             where: { email },
-            create: { email, name: nom, phone: telephone, role: 'CLIENT', password: '' }
+            create: {
+              email,
+              role: 'CLIENT',
+              password: '',
+            }
           }
         }
       }
@@ -44,8 +51,12 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ success: true });
+
   } catch (error) {
     console.error('Erreur:', error);
-    return NextResponse.json({ message: 'Erreur serveur.' }, { status: 500 });
+    return NextResponse.json(
+      { message: 'Erreur serveur.' },
+      { status: 500 }
+    );
   }
 }
