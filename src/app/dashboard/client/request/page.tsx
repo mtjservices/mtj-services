@@ -26,6 +26,28 @@ export default function RequestServicePage() {
         </Link>
       </div>
 
+      {/* Section créer un compte / se connecter */}
+      <div className="rounded-2xl p-6 mb-6 fade-in" style={{
+        backgroundColor: 'hsl(145, 35%, 28%)',
+        border: '1px solid hsl(145, 25%, 45%)'
+      }}>
+        <h2 className="text-lg font-extrabold mb-1" style={{ color: 'white' }}>Vous n'avez pas encore de compte ?</h2>
+        <p className="text-sm mb-4" style={{ color: 'hsl(140, 20%, 85%)' }}>Créez un compte gratuit pour soumettre votre demande et suivre son avancement.</p>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Link href="/auth/register/client" style={{
+            backgroundColor: 'hsl(65, 85%, 55%)', color: 'hsl(150, 40%, 15%)',
+            fontWeight: 700, padding: '0.625rem 1.25rem', borderRadius: '0.75rem',
+            textDecoration: 'none', textAlign: 'center', fontSize: '0.875rem'
+          }}>Créer un compte</Link>
+          <Link href="/auth/login" style={{
+            border: '2px solid hsl(65, 85%, 55%)', color: 'hsl(65, 85%, 55%)',
+            fontWeight: 700, padding: '0.625rem 1.25rem', borderRadius: '0.75rem',
+            textDecoration: 'none', textAlign: 'center', fontSize: '0.875rem',
+            backgroundColor: 'transparent'
+          }}>Se connecter</Link>
+        </div>
+      </div>
+
       <div className="glass-panel p-8 rounded-xl shadow-lg border border-border fade-in fade-in-delay-1 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-primary-100 rounded-bl-full -z-10 opacity-50"></div>
 
@@ -73,9 +95,9 @@ export default function RequestServicePage() {
           <div className="space-y-2">
             <label className="block text-sm font-bold text-foreground">Description détaillée</label>
             <p className="text-xs text-text-muted mb-2">Précisez la taille de votre terrain, particularités des travaux (clôtures, accès difficile), ou tout autre détail pertinent pour accélérer l'estimation.</p>
-            <textarea 
-              name="description" 
-              required 
+            <textarea
+              name="description"
+              required
               rows={5}
               placeholder="Ex: Terrain de coin, environ 5000 pi2..."
               className="w-full p-3 border border-border rounded-lg bg-surface focus:ring-2 focus:ring-primary-500 transition-shadow resize-y text-black placeholder:text-gray-400"
