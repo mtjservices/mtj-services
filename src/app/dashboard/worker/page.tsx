@@ -128,8 +128,10 @@ export default async function WorkerDashboardPage() {
              
              <div className="text-center mb-8">
                <div className="inline-block relative">
-                 <div className="w-28 h-28 bg-gradient-to-br from-surface to-background rounded-full border-[6px] border-primary-500 flex items-center justify-center mx-auto shadow-xl relative z-10 transition-transform hover:rotate-3 hover:scale-105 duration-300">
-                   <span className="text-4xl font-black text-primary-600 bg-clip-text text-transparent bg-gradient-to-br from-primary-600 to-primary-400">N{profile.level}</span>
+                 {/* Cercle jaune fluo */}
+                 <div className="w-28 h-28 rounded-full flex items-center justify-center mx-auto shadow-xl relative z-10"
+                   style={{ backgroundColor: 'hsl(65, 85%, 55%)', border: '6px solid hsl(65, 90%, 45%)' }}>
+                   <span className="text-4xl font-black" style={{ color: 'hsl(150, 40%, 15%)' }}>N{profile.level}</span>
                  </div>
                  {profile.level === 5 && (
                    <div className="absolute -top-4 -right-4 text-4xl animate-bounce drop-shadow-md z-20" title="Niveau Max!">👑</div>
@@ -152,10 +154,14 @@ export default async function WorkerDashboardPage() {
                      {profile.completedJobs} <span className="text-text-muted font-semibold text-xs">/ {profile.level * 5} Contrats</span>
                    </span>
                  </div>
-                 <div className="w-full bg-border rounded-full h-3 border border-border/50 relative overflow-hidden shadow-inner">
-                   <div className="absolute top-0 left-0 bg-gradient-to-r from-primary-400 to-primary-600 h-full rounded-full transition-all duration-1000 ease-out" 
-                        style={{ width: `${Math.min(100, (profile.completedJobs / (profile.level * 5)) * 100)}%` }}>
-                       <div className="absolute inset-0 bg-white/20 w-full h-full animate-[shimmer_2s_infinite]"></div>     
+                 {/* Barre de progression verte */}
+                 <div className="w-full rounded-full h-3 relative overflow-hidden shadow-inner"
+                   style={{ backgroundColor: 'hsl(145, 25%, 80%)' }}>
+                   <div className="absolute top-0 left-0 h-full rounded-full transition-all duration-1000 ease-out"
+                     style={{
+                       width: `${Math.min(100, (profile.completedJobs / (profile.level * 5)) * 100)}%`,
+                       backgroundColor: 'hsl(145, 45%, 32%)'
+                     }}>
                    </div>
                  </div>
                  {profile.level < 5 && (
