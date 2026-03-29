@@ -27,7 +27,6 @@ export default function RequestServicePage() {
       </div>
 
       <div className="glass-panel p-8 rounded-xl shadow-lg border border-border fade-in fade-in-delay-1 relative overflow-hidden">
-        {/* Decorative background element */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-primary-100 rounded-bl-full -z-10 opacity-50"></div>
 
         <h1 className="text-3xl font-extrabold mb-2 tracking-tight">Nouvelle demande</h1>
@@ -42,7 +41,7 @@ export default function RequestServicePage() {
         <form action={formAction} className="space-y-6">
           <div className="space-y-2">
             <label className="block text-sm font-bold text-foreground">Type de service</label>
-            <select name="serviceType" required className="w-full p-3 border border-border rounded-lg bg-surface focus:ring-2 focus:ring-primary-500 transition-shadow">
+            <select name="serviceType" required className="w-full p-3 border border-border rounded-lg bg-surface focus:ring-2 focus:ring-primary-500 transition-shadow text-black">
               <option value="">Sélectionnez un service</option>
               <option value="Tonte de pelouse">Tonte de pelouse</option>
               <option value="Déneigement">Déneigement</option>
@@ -63,7 +62,7 @@ export default function RequestServicePage() {
               ].map(f => (
                 <div key={f.id} className="relative flex items-center p-3 border border-border rounded-lg hover:bg-surface cursor-pointer focus-within:ring-2 focus-within:ring-primary-500 focus-within:border-primary-500 transition-colors">
                   <input type="radio" name="frequency" id={f.id} value={f.label} required className="w-4 h-4 text-primary-600 border-gray-300 focus:ring-primary-500" />
-                  <label htmlFor={f.id} className="ml-3 block text-sm font-medium text-foreground cursor-pointer w-full">
+                  <label htmlFor={f.id} className="ml-3 block text-sm font-medium text-black cursor-pointer w-full">
                     {f.label}
                   </label>
                 </div>
@@ -79,7 +78,7 @@ export default function RequestServicePage() {
               required 
               rows={5}
               placeholder="Ex: Terrain de coin, environ 5000 pi2..."
-              className="w-full p-3 border border-border rounded-lg bg-surface focus:ring-2 focus:ring-primary-500 transition-shadow resize-y"
+              className="w-full p-3 border border-border rounded-lg bg-surface focus:ring-2 focus:ring-primary-500 transition-shadow resize-y text-black placeholder:text-gray-400"
             ></textarea>
           </div>
 
