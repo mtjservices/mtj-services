@@ -54,7 +54,7 @@ export default function Home() {
       <section style={{ paddingTop: '7rem', paddingBottom: '4rem', paddingLeft: '1rem', paddingRight: '1rem' }}>
         <div className="container mx-auto max-w-4xl">
           <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '1rem', color: 'white' }}>
-            Votre terrain, notre priorité.
+            Un terrain impeccable. Une opportunité pour les jeunes.
           </h1>
           <p style={{ fontSize: '1.125rem', color: 'hsl(140, 20%, 85%)', marginBottom: '2rem', maxWidth: '42rem' }}>
             Entretien de pelouse, déneigement et travaux manuels faits par des jeunes de 14 à 18 ans.
