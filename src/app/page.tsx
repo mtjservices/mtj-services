@@ -73,7 +73,7 @@ export default function Home() {
               fontWeight: 600, padding: '0.75rem 1.5rem', borderRadius: '0.75rem', textDecoration: 'none', display: 'inline-block'
             }}>📞 Appelez-nous maintenant</a>
           </div>
-          <div className="grid grid-cols-3 gap-6 max-w-lg">
+          <div className="grid grid-cols-3 gap-6 max-w-lg" style={{ marginTop: '3rem' }}>
             {[
               { val: "14-18", label: "Ans" },
               { val: "7", label: "Types de services" },
